@@ -1,0 +1,22 @@
+{
+   "Routes":[
+      {
+         "DownstreamPathTemplate":"/api/WeatherForecast",
+         "DownstreamScheme":"http",
+         "DownstreamHostAndPorts":[
+            {
+               "Host":"localhost",
+               "Port":"7001"
+            }
+         ],
+         "UpstreamPathTemplate":"/TestService",
+         "UpstreamHttpMethod":[
+            "GET"
+         ]
+      }
+
+   ],
+   "GlobalCOnfiguration":{
+      "BaseUrl":"https://localhost:7000"
+   }
+}
