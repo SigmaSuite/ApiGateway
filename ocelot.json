@@ -13,6 +13,20 @@
          "UpstreamHttpMethod":[
             "GET"
          ]
+      },
+      {
+         "DownstreamPathTemplate":"/login_check",
+         "DownstreamScheme":"http",
+         "DownstreamHostAndPorts":[
+            {
+               "Host":"authorization_service",
+               "Port":7005
+            }
+         ],
+         "UpstreamPathTemplate":"/login_check",
+         "UpstreamHttpMethod":[
+            "POST"
+         ]
       }
    ],
    "GlobalCOnfiguration":{
