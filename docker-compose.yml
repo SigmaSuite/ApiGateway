@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  apigateway:
+    build: .
+    ports:
+      - 7000:7000
+    environment:
+      - ASPNETCORE_URLS=http://*:7000
+      - ASPNETCORE_ENVIRONMENT=Development
