@@ -1,32 +1,18 @@
 {
    "Routes":[
       {
-         "DownstreamPathTemplate":"/api/Authenticate",
-         "DownstreamScheme":"http",
-         "DownstreamHostAndPorts":[
-            {
-               "Host":"localhost",
-               "Port":"7005"
-            }
-         ]
-      },
-      {
          "DownstreamPathTemplate":"/api/WeatherForecast",
          "DownstreamScheme":"http",
          "DownstreamHostAndPorts":[
             {
-               "Host":"localhost",
+               "Host":"testservice",
                "Port":"7001"
             }
          ],
-         "UpstreamPathTemplate":"/TestService",
+         "UpstreamPathTemplate":"/testservice",
          "UpstreamHttpMethod":[
             "GET"
-         ],
-         "AuthenticationOptions": {
-            "AuthenticationProviderKey": "TestKey",
-            "AllowedScopes": []
-        }
+         ]
       }
    ],
    "GlobalCOnfiguration":{
