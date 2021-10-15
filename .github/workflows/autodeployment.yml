@@ -11,6 +11,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  KUBECONFIG: ${{ secrets.KUBECONFIG }}
   
 jobs:
   build:
@@ -64,6 +65,6 @@ jobs:
         chmod +x kubectl
         mv kubectl /usr/local/bin
         mkdir -p ~/.kube
-        echo ${{ secrets.KUBECONFIG }} | base64 -d > ~/.kube/config
+        echo ${KUBECONFIG} | base64 -d > ~/.kube/config
         export KUBECONFIG=~/.kube/config
         kubectl apply -f deployment.yaml
