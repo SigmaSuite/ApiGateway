@@ -64,6 +64,6 @@ jobs:
         chmod +x kubectl
         mv kubectl /usr/local/bin
         mkdir -p ~/.kube
-        echo ${{ secrets.KUBECONFIG }} | base64 -d > ~/.kube/config
+        echo ${{ secrets.KUBE_CONFIG_DATA }} | base64 -d > ~/.kube/config
         export KUBECONFIG=~/.kube/config
         kubectl apply -f deployment.yaml
