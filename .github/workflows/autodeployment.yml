@@ -53,10 +53,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       
       - name: Deploy K8s container
-        uses: okteto/apply@v4.2
-        with:
-          # Path to the Kubernetes manifest. Can be a file or a directory
-          manifest: deployment.yaml
-          # If present, the namespace scope for this action. If not specified, it will use the current context
-          namespace: default # optional
-      
+        uses: steebchen/kubectl@v2.0.0
+        with: # defaults to latest kubectl binary version
+          config: ${{ secrets.KUBECONFIG }}
+          command: apply -f deployment.yaml
