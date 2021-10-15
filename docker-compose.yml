@@ -12,3 +12,4 @@ services:
 networks:
   net-gateway:
     driver: bridge
+# autodeployment test commit
