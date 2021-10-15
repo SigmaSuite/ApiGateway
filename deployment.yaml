@@ -16,16 +16,23 @@ spec:
     spec:
       containers:
       - name: apigateway
-        image: ghcr.io/sigmasuite/apigateway:main
+        image: ghcr.io/sigmasuite/apigateway:master
         ports:
         - containerPort: 7000
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        - name: ASPNETCORE_URLS
+          value: http://*:7000
+      imagePullSecrets:
+        - name: ghcr-secret
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: apigateway
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - protocol: TCP
     port: 80
