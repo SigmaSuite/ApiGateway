@@ -53,7 +53,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       
   deploy:
-    needs: ['build']
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -63,7 +62,6 @@ jobs:
         curl -sLO "https://dl.k8s.io/release/v1.21.2/bin/linux/amd64/kubectl" -o kubectl
         chmod +x kubectl
         mv kubectl /usr/local/bin
-        mkdir -p ~/.kube
-        echo ${{ secrets.KUBE_CONFIG_DATA }} | base64 -d > ~/.kube/config
-        export KUBECONFIG=~/.kube/config
+        echo ${{ secrets.KUBE_CONFIG_DATA }} | base64 -d > /kubeconfig
+        export KUBECONFIG=/kubeconfig
         kubectl apply -f deployment.yaml
