@@ -27,38 +27,6 @@
          "UpstreamHttpMethod":[
             "POST"
          ]
-      },
-      {
-         "DownstreamPathTemplate":"/api/calendar/{everything}",
-         "DownstreamScheme":"http",
-         "DownstreamHostAndPorts":[
-            {
-               "Host":"soe-calendar-frontend",
-               "Port":80
-            }
-         ],
-         "UpstreamPathTemplate":"/calendar/{everything}",
-         "UpstreamHttpMethod":[
-            "GET",
-            "POST",
-            "OPTIONS"
-         ]
-      },
-      {
-         "DownstreamPathTemplate":"/api/calendar",
-         "DownstreamScheme":"http",
-         "DownstreamHostAndPorts":[
-            {
-               "Host":"soe-calendar-frontend",
-               "Port":80
-            }
-         ],
-         "UpstreamPathTemplate":"/calendar",
-         "UpstreamHttpMethod":[
-            "GET",
-            "POST",
-            "OPTIONS"
-         ]
       }
    ],
    "GlobalCOnfiguration":{
