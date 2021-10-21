@@ -43,6 +43,22 @@
             "POST",
             "OPTIONS"
          ]
+      },
+      {
+         "DownstreamPathTemplate":"/api/calendar",
+         "DownstreamScheme":"http",
+         "DownstreamHostAndPorts":[
+            {
+               "Host":"soe-calendar-frontend",
+               "Port":80
+            }
+         ],
+         "UpstreamPathTemplate":"/calendar",
+         "UpstreamHttpMethod":[
+            "GET",
+            "POST",
+            "OPTIONS"
+         ]
       }
    ],
    "GlobalCOnfiguration":{
