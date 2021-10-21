@@ -29,7 +29,7 @@
          ]
       },
       {
-         "DownstreamPathTemplate":"/calendar",
+         "DownstreamPathTemplate":"/api/calendar",
          "DownstreamScheme":"http",
          "DownstreamHostAndPorts":[
             {
