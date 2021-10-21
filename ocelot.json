@@ -34,7 +34,7 @@
          "DownstreamHostAndPorts":[
             {
                "Host":"soe-calendar-frontend",
-               "Port":3000
+               "Port":80
             }
          ],
          "UpstreamPathTemplate":"/calendar",
